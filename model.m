@@ -107,7 +107,7 @@ c = 2*atan2(sqrt(a),sqrt(1-a));
 d = R*c; %horizontal distance (in m)
 
 %initial range (pythagoran theorem)
-r = sqrt(d^2+ELEV_TARGET-ELEV_INIT)^2;
+r = sqrt(d^2+(ELEV_TARGET-ELEV_INIT)^2);
 
 % initial azimuth
 yaw_init = azimuth(LAT_INIT,LON_INIT,LAT_TARGET,LON_TARGET);
@@ -115,5 +115,5 @@ yaw = yaw_init*d2r;
 
 %% initial flight path angle
 dh = abs(ELEV_TARGET-ELEV_INIT);
-FPA_INIT = atan(dh/d); %rad
+FPA_INIT = atan(dh/d); %raMd
 
